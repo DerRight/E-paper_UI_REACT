@@ -1,38 +1,56 @@
 import React from "react";
-import {Link} from 'react-router-dom';
+import { FaHome, FaSearch, FaChartBar, FaRegUser } from "react-icons/fa";
+import { MdFavorite } from "react-icons/md";
+import { IoMdSettings } from "react-icons/io";
 import LOGO from '../image/EpaperLogo_BLACK.png';
 import './Sidebar.scss';
 
-function Sidebar() {
+function Sidebar({ setContent }) {
     return (
         <div className="Sidebar">
             <div className="sidebar-header">
-                <img src={LOGO} alt="logo" />
+                <div className="logo">
+                    <img src={LOGO} alt="logo" />
+                </div>
             </div>
 
-            <ul className="sidebar-menu">
-                <li>
-                    <Link to="/home">首頁</Link>
-                </li>
+            <div className="sidebar-body">
+                <ul className="sidebar-menu">
+                    <li onClick={() => setContent("home")}>
+                        <FaHome />
+                        <span>首頁</span>
+                    </li>
 
-                <li>
-                    <Link to="/search">搜尋</Link>
-                </li>
+                    <li onClick={() => setContent("search")}>
+                        <FaSearch />
+                        <span>搜尋</span>
+                    </li>
 
-                <li>
-                    <Link to="/favorite">我的最愛</Link>
-                </li>
+                    <li onClick={() => setContent("favorite")}>
+                        <MdFavorite />
+                        <span>我的最愛</span>
+                    </li>
 
-                <li>
-                    <Link to="/Setting">設定</Link>
-                </li>
+                    <li onClick={() => setContent("setting")}>
+                        <IoMdSettings />
+                        <span>設定</span>
+                    </li>
 
-                <li>
-                    <Link to="/Chart">圖表</Link>
-                </li>
-            </ul>
+                    <li onClick={() => setContent("chart")}>
+                        <FaChartBar />
+                        <span>圖表</span>
+                    </li>
+                </ul>
+            </div>
 
-            <div className="sidebar-footer"></div>
+            <div className="sidebar-footer">
+                <ul className="user">
+                    <li onClick={() => setContent("user")}>
+                        <FaRegUser />
+                        <user>使用者</user>
+                    </li>
+                </ul>
+            </div>
         </div>
     );
 }

@@ -1,0 +1,48 @@
+div {
+    .Sidebar {
+        width: 350px;
+        height: 100vh;
+        border-right: 2px solid black;
+    }
+    .sidebar-header {
+        img {
+            width: 242px;
+            height: 123px;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+
+    .sidebar-menu {
+        font-size: 34px;
+        list-style-type: none;
+        margin: 0;
+
+        li {
+            padding: 20px 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
+    }
+
+    .sidebar-footer {
+        font-size: 34px;
+        
+        .user {
+            margin: 0;
+            list-style-type: none;
+
+            li {
+                padding: 20px 0;
+            }
+
+            a {
+                text-decoration: none;
+                color: black;
+            }
+        }
+    }
+}

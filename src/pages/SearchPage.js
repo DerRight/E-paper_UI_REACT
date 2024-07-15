@@ -1,11 +1,11 @@
 import React from "react";
 
-function HomePage() {
+function SearchPage() {
     return (
         <div>
-            <h1>Home</h1>
+            <h1>Search</h1>
         </div>
     );
 }
 
-export default HomePage;
+export default SearchPage;
