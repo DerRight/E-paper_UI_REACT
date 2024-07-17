@@ -27,7 +27,7 @@ function LoginPage() {
     }
 
     return (
-        <div className='container'>
+        <div className='login-content'>
             <div className='logo'>
                 <img src={Logo} alt='LOGO' />
             </div>

@@ -1,8 +1,12 @@
 div {
     .Sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
         width: 350px;
         height: 100vh;
         border-right: 2px solid black;
+        z-index: 1000;
     }
     .sidebar-header {
         img {
@@ -17,9 +21,11 @@ div {
         font-size: 34px;
         list-style-type: none;
         margin: 0;
+        padding: 0 20px;
 
         li {
             padding: 20px 0;
+            cursor: pointer;
         }
 
         a {
@@ -33,10 +39,12 @@ div {
         
         .user {
             margin: 0;
+            padding: 0 20px;
             list-style-type: none;
 
             li {
                 padding: 20px 0;
+                cursor: pointer;
             }
 
             a {
@@ -44,5 +52,16 @@ div {
                 color: black;
             }
         }
+    }
+
+    // 側欄設計
+    .sidebar-menu li.selected,
+    .user li.selected {
+        border: 2px solid #000;
+        border-radius: 25px;
+    }
+    .sidebar-menu li span,
+    .user li span {
+        margin-left: 10px;
     }
 }

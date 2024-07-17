@@ -1,0 +1,16 @@
+div {
+    .home-content {
+        text-align: center;
+    }
+    
+    .kiosk {
+        width: 75vw;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .kiosk .slick-prev:before,
+    .kiosk .slick-next:before {
+        color: black;
+    }
+}

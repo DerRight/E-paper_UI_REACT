@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Sidebar from "../components/Sidebar";
+import HomePage from "./HomePage";
 import SearchPage from './SearchPage';
 import FavoritePage from './FavoritePage';
 import SettingPage from './SettingPage';
@@ -7,13 +8,13 @@ import ChartPage from './ChartPage';
 import UserPage from './UserPage';
 import './MainPage.scss';
 
-function HomePage() {
+function MainPage() {
     const [currentContent, setCurrentContent] = useState("home");
 
     const renderContent = () => {
         switch (currentContent) {
             case "home":
-                return <h1>Home</h1>;
+                return <HomePage />;
             case "search":
                 return <SearchPage />;
             case "favorite":
@@ -25,7 +26,7 @@ function HomePage() {
             case "user":
                 return <UserPage />;
             default:
-                return <h1>Home</h1>;
+                return <HomePage />;
         }
     }
     return (
@@ -40,4 +41,4 @@ function HomePage() {
         </div>
     );
 }
-export default HomePage;
+export default MainPage;
