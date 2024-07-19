@@ -13,4 +13,22 @@ div {
     .kiosk .slick-next:before {
         color: black;
     }
+
+    .school-active {
+        padding: 50px 0;
+
+        .school-active-recently {
+            justify-content: center;
+            align-items: center;
+        }
+
+        .school-active-date {
+            display: flex;
+            h3 {
+                padding: 0 50px;
+            }
+        }
+    }
+
+    
 }
