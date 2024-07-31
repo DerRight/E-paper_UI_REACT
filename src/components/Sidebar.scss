@@ -1,51 +1,94 @@
 div {
     .Sidebar {
+        height: 100vh;
+        width: 350px;
+        background-color: #f8f9fa;
+        transition: width 0.3s ease, border-width 0.3s ease;
+        border-right: 3px solid black;
+
         .sidebar-header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+
             img {
-                width: 242px;
-                height: 123px;
-                align-items: center;
-                justify-content: center;
+                width: 100%;
+                transition: width 0.3s ease;
+                cursor: pointer;
             }
         }
 
-        .sidebar-menu {
-            font-size: 34px;
-            list-style-type: none;
-            margin: 0;
-            padding: 0 20px;
-    
-            li {
-                padding: 20px 0;
-                cursor: pointer;
-            }
-    
-            a {
-                text-decoration: none;
-                color: black;
+        .sidebar-body {
+            .sidebar-menu {
+                list-style-type: none;
+                padding: 0;
+
+                li {
+                    display: flex;
+                    align-items: center;
+                    padding: 15px 20px;
+                    cursor: pointer;
+                    transition: background-color 0.3s ease;
+
+                    &:hover,
+                    &.selected {
+                        background-color: #e2e6ea;
+                        border-radius: 10px;
+                    }
+
+                    svg {
+                        font-size: 24px;
+                    }
+
+                    span {
+                        margin-left: 10px;
+                        transition: opacity 0.3s ease;
+                        opacity: 1;
+                    }
+                }
             }
         }
 
         .sidebar-footer {
-            font-size: 34px;
+            position: absolute;
+            bottom: 20px;
+            width: 100%;
             
             .user {
-                margin: 0;
-                padding: 0 20px;
+                padding: 0;
                 list-style-type: none;
-    
+
                 li {
-                    padding: 20px 0;
+                    display: flex;
+                    align-items: center;
+                    padding: 15px 20px;
                     cursor: pointer;
+                    transition: background-color 0.3s ease;
                 }
-    
-                a {
-                    text-decoration: none;
-                    color: black;
+
+                &:hover,
+                &.selected {
+                    background-color: #e2e6ea;
+                    border-radius: 10px;
+                }
+
+                svg {
+                    font-size: 24px;
+                }
+
+                span {
+                    margin-left: 10px;
+                    transition: opacity 0.3s ease;
+                    opacity: 1;
                 }
             }
         }
     }
+
+    // &-closed {
+    //     width: 465px;
+    // }
 
     // 側欄設計
     .sidebar-menu li.selected,

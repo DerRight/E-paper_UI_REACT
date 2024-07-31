@@ -4,20 +4,23 @@ import { MdFavorite } from "react-icons/md";
 import { IoMdSettings } from "react-icons/io";
 import LOGO from '../image/EpaperLogo_BLACK.png';
 import './Sidebar.scss';
+// import cx from "classnames";
 
 function Sidebar({ setContent }) {
     const [selected, setSelected] = useState("home");
+    // const [isOpen, setIsOpen] = useState(true);
 
     const handleItemClick = (item) => {
         setSelected(item);
         setContent(item);
+        // setIsOpen(!isOpen);
     };
 
     return (
-        <div className="Sidebar">
+        <div className="Sidebar" /*{cx("Sidebar", { "Sidebar-closed": !isOpen })}*/>
             <div className="sidebar-header">
                 <div className="logo">
-                    <img src={LOGO} alt="logo" />
+                    <img src={LOGO} alt="logo" onClick={() => handleItemClick("home")} />
                 </div>
             </div>
 
