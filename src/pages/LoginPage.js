@@ -6,6 +6,7 @@ import './LoginPage.scss';
 function LoginPage() {
     const [username, setUsername] = useState('');
     const [userpassword, setUserpassword] = useState('');
+    const [nameError, setNameError] = useState('');
     const navigate = useNavigate();
 
     const handleLoginClicked = () => {
@@ -26,40 +27,51 @@ function LoginPage() {
         }
     }
 
+    const validateName = (e) => {
+        const name = e.target.value;
+        setUsername(name);
+
+        const nameRegex = 'admin';
+        if (!nameRegex.test(name)) {
+            setNameError('Invalid name');
+        }
+        else {
+            setNameError('');
+        }
+    }
+
     return (
-        <div className='login-content'>
-            <div className='logo'>
+        <article className='login-content'>
+            <figure className='logo'>
                 <img src={Logo} alt='LOGO' />
-            </div>
+            </figure>
 
-            <div className='line'></div>
+            <section className='login'>
+                <p className='login-text'>登入</p>
 
-            <div className='login'>
-                <div className='login_Text'>
-                    <label>登入</label>
-                </div>
-
-                <div className='account'>
+                <section className='account'>
                     <input
                         type='text'
                         placeholder='請輸入您的帳號'
                         value={username}
-                        onChange={(e) => setUsername(e.target.value)} />
-                </div>
+                        onChange={validateName}
+                        className={nameError ? 'error' : ''} />
+                        {nameError && <p className='error-message'>{nameError}</p>}
+                </section>
 
-                <div className='password'>
+                <section className='password'>
                     <input
                         type='password'
                         placeholder='請輸入您的密碼'
                         value={userpassword}
                         onChange={(e) => setUserpassword(e.target.value)} />
-                </div>
+                </section>
 
-                <div className='login_BTN'>
+                <section className='login-BTN'>
                     <button onClick={handleLoginClicked}>登入</button>
-                </div>
-            </div>
-        </div>
+                </section>
+            </section>
+        </article>
     );
 }
 
